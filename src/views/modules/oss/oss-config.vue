@@ -9,6 +9,7 @@
           <el-radio :label="1">七牛</el-radio>
           <el-radio :label="2">阿里云</el-radio>
           <el-radio :label="3">腾讯云</el-radio>
+          <el-radio :label="4">百度云</el-radio>
         </el-radio-group>
       </el-form-item>
       <template v-if="dataForm.type === 1">
@@ -74,6 +75,29 @@
           <el-input v-model="dataForm.qcloudRegion" placeholder="如：sh（可选值 ，华南：gz 华北：tj 华东：sh）"></el-input>
         </el-form-item>
       </template>
+      <template v-else-if="dataForm.type === 4">
+      <el-form-item label="域名">
+        <el-input v-model="dataForm.baiduDomain" placeholder="百度云绑定的域名"></el-input>
+      </el-form-item>
+      <el-form-item label="路径前缀">
+        <el-input v-model="dataForm.baiduPrefix" placeholder="不设置默认为空"></el-input>
+      </el-form-item>
+      <el-form-item label="EndPoint">
+        <el-input v-model="dataForm.baiduEndPoint" placeholder="百度云EndPoint"></el-input>
+      </el-form-item>
+      <el-form-item label="AccessKeyID">
+        <el-input v-model="dataForm.baiduAccessKeyID" placeholder="百度云AccessKeyID"></el-input>
+      </el-form-item>
+      <el-form-item label="SecretAccessKey">
+        <el-input v-model="dataForm.baiduSecretAccessKey" placeholder="百度云SecretAccessKey"></el-input>
+      </el-form-item>
+      <el-form-item label="BucketName">
+        <el-input v-model="dataForm.baiduBucketName" placeholder="百度云BucketName"></el-input>
+      </el-form-item>
+      <el-form-item label="Bucket所属地区">
+        <el-input v-model="dataForm.baiduRegion" placeholder="如：华北-北京（可选值，华北-北京  华南-广州  香港  华东-苏州  华北-保定）"></el-input>
+      </el-form-item>
+    </template>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
